@@ -15,7 +15,6 @@ def room(request, room_name):
     if request.user.is_authenticated:
         chat_room, created = Room.objects.get_or_create(name=room_name)
         earlier_room_messages = Message.objects.filter(room=chat_room.id)
-        # print("\nearlier_room_messages ==>", earlier_room_messages)
 
         return render(
             request,

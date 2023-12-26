@@ -5,7 +5,7 @@ import os
 from channels.auth import AuthMiddlewareStack
 from channels.security.websocket import AllowedHostsOriginValidator
 import chat.routing
-# from channels.sessions import SessionMiddlewareStack
+
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 

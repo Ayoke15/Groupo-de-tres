@@ -22,7 +22,7 @@ chatSocket.onmessage = function (e) {
             ul_tag.innerHTML += `
                     <div style="display:flex">
                         <div class="message-parent-css">
-                          <img src="{% static 'images/japan.png' %}" width="16" height="16" alt="Japan Flag">
+                          <img src="/static/images/japan.png" width="26" height="26" alt="Japan Flag">
 
                         </div>
                         <div style="width: 95%;">

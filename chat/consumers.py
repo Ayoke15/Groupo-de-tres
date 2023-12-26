@@ -26,9 +26,6 @@ class ChatConsumer(WebsocketConsumer):
         self.room = Room.objects.get(name=self.room_name)
         self.user = self.scope["user"]
 
-        # just playing around below
-        # if self.user.is_anonymous:
-        #     return self.disconnect(1000)
 
         # accept the connection
         self.accept()
@@ -40,7 +37,7 @@ class ChatConsumer(WebsocketConsumer):
                 'type': 'forbidden_access'
             }))
 
-        # work flow => 1) join room (by group_add), 2) send events in the room (by group_send)
+
 
         # join the room group
         async_to_sync(self.channel_layer.group_add)(
@@ -58,8 +55,8 @@ class ChatConsumer(WebsocketConsumer):
         # Send message to room group
         async_to_sync(self.channel_layer.group_send)(
             self.room_group_name, {
-                'type': 'chat_room_joined',                                     # function to invoke
-                'users': joined_users,    # event              
+                'type': 'chat_room_joined',
+                'users': joined_users,
             }
         )
 
